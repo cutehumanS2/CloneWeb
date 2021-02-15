@@ -1,0 +1,179 @@
+@charset "utf-8";
+
+/*reset*/
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  font-size: inherit;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+img {
+  vertical-align: middle;
+}
+a img {
+  border: none;
+}
+li {
+  list-style: none;
+}
+address,
+em,
+i {
+  font-style: normal;
+}
+
+/*layout*/
+body {
+  font-family: "NanumSquare", sans-serif !important;
+  font-size: 14px;
+  color: #4e4e4e;
+  line-height: 1.4;
+}
+.wrap {
+  width: 100%;
+  min-width: 1100px;
+}
+
+/*header*/
+/*
+-padding을 줄 때는 box-sizing도 줘야 함
+-box-sizing: border-box ) 박스의 크기를 테두리 기준으로 정함
+-position: fixed ) 스크롤해도 고정
+-line-height: 120px; ) logo 헤더의 center에 두려고 설정
+ : height와 line-height 같을 때 center에 위치하게 됨
+*/
+header {
+  width: 100%;
+  height: 120px;
+  padding: 0px 60px;
+  line-height: 120px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+}
+/*a는 line요소이기 때문에 padding등 지정x
+=> block으로 바꿔줌*/
+header .logo {
+  display: block;
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: -6px;
+  color: #39312b;
+  float: left;
+}
+header nav {
+  float: right;
+}
+header nav .gnb li {
+  display: inline-block;
+  margin-left: 60px;
+}
+header nav .gnb li a {
+  display: block;
+  font-size: 18px;
+  text-transform: uppercase;
+  position: relative;
+}
+/*center에 위치 시킬 때 보통 
+left: 50%; transform: translateX(-50%); 이렇게 많이 함*/
+header nav .gnb li a:after {
+  content: "";
+  width: 0%;
+  height: 1px;
+  position: absolute;
+  background: #888;
+  bottom: 47px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.5s;
+}
+header nav .gnb li a:hover:after,
+header nav .gnb li a:focus:after {
+  width: 100%;
+}
+/*
+
+*/
+
+/*
+display 속성이 inline-block으로 지정된 엘리먼트는 기본적으로 inline 엘리먼트처럼 
+전후 줄바꿈 없이 한 줄에 다른 엘리먼트들과 나란히 배치됩니다. 하지만 inline 
+엘리먼트에서 불가능하던 width와 height 속성 지정 및 margin과 padding 속성의 상하 
+간격 지정이 가능해집니다.
+대표적인 inline-block 엘리먼트로 <button>이나 <select> 태그 등을 들 수 있습니다.
+    */
